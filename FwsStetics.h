@@ -10,6 +10,7 @@
     # include <string.h>
     # include <stdarg.h>
 
+    /************** macros para cuadro doble **************/
     # define FWS_DlatSDC  187
     # define FWS_DlatSIC  201
     # define FWS_DlatC    186
@@ -18,6 +19,17 @@
     # define FWS_DlatIIC  200
 
     # define FWS_Dlin     205
+
+/************** macros para cuadro simple **************/
+    # define FWS_SlatSDC  191
+    # define FWS_SlatSIC  218
+
+    # define FWS_SlatC    179
+
+    # define FWS_SlatIDC  217
+    # define FWS_SlatIIC  192
+
+    # define FWS_Slin     196
 
     /***************************************************************/
     /******************* prototipo y declaracion *******************/
@@ -147,6 +159,11 @@ void    FwsSttcsDdoble  ( int esp, char * txtIn ){
     // dibujar un cuadro doble con salto de linea para el texto especificado
     FwsSttcsDrect4(esp,txtIn,FWS_Dlin,FWS_Dlin,FWS_DlatC,FWS_DlatSIC,FWS_DlatSDC,FWS_DlatIIC, FWS_DlatIDC);
 
+}
+
+void    FwsSttcsDsingle ( int esp, char * txtIn){
+    // dibujar cuadro simple
+    FwsSttcsDrect4(esp,txtIn,FWS_Slin,FWS_Slin,FWS_SlatC,FWS_SlatSIC,FWS_SlatSDC,FWS_SlatIIC, FWS_SlatIDC);
 }
 
 #endif // FWSSTETICS_H

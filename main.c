@@ -8,6 +8,7 @@ int main(void)
     FwsSttcsDmenu(4,"verificar","ver","imprimir","salir");
 
     FwsSttcsDdoble(12,"este es un texo");
+    FwsSttcsDsingle(12,"este es un texo");
     return 0;
 }
 
