@@ -34,6 +34,15 @@
     /***************************************************************/
     /******************* prototipo y declaracion *******************/
     /***************************************************************/
+void    FwsSttcsLimpiar ( int espacios, char * textIn ){
+    char salto;
+    FwsSttcsDdoble(espacios, textIn);
+    fflush(stdin);
+    scanf("%c",&salto);
+    fflush(stdin);
+    system("cls");
+}
+
 void    FwsSttcsDSalto  ( int numeroSaltos ){
     int i;
     for ( i = 0 ; i < numeroSaltos ; i ++ )
@@ -151,7 +160,9 @@ int     FwsSttcsDmenu   ( int dims, ...){
     for ( i = 0 ;i < dims ; i ++ ){
         printf(" \t \t \t [%d]  %s \n", i+1 , va_arg(listaArgs, char * ));
     }
+    fflush(stdin);
     scanf("%d",&opcion);
+    fflush(stdin);
     return opcion;
 }
 
@@ -164,6 +175,30 @@ void    FwsSttcsDdoble  ( int esp, char * txtIn ){
 void    FwsSttcsDsingle ( int esp, char * txtIn){
     // dibujar cuadro simple
     FwsSttcsDrect4(esp,txtIn,FWS_Slin,FWS_Slin,FWS_SlatC,FWS_SlatSIC,FWS_SlatSDC,FWS_SlatIIC, FWS_SlatIDC);
+}
+
+void    FwsSttcsDSubLn  ( int esp, char * txtIn ){
+    // dibujar linea inferior para el texto dado
+
+    // poner espacios
+    int i,j,k;
+    for ( i = 0 ; i < esp ; i++ )
+        printf(" ");
+
+    // imprimi cadena de entrada
+    printf("%s \n", txtIn);
+
+    // poner espacio
+    for ( i = 0 ; i < esp ; i++ )
+        printf(" ");
+
+
+    // poner linea inferior
+    for(i = 0 ; i < strlen(txtIn); i++ )
+        printf("%c",FWS_Slin);
+
+    FwsSttcsDSalto(1);
+
 }
 
 #endif // FWSSTETICS_H

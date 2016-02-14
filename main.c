@@ -9,6 +9,8 @@ int main(void)
 
     FwsSttcsDdoble(12,"este es un texo");
     FwsSttcsDsingle(12,"este es un texo");
+
+    FwsSttcsDSubLn(10,"parte uno        parte dos      parte tres     parte cuatro");
     return 0;
 }
 
